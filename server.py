@@ -1,12 +1,8 @@
-import sys
 from flask import Flask
 from flask import request
 from flask import Response
 import requests
 import os
-from dotenv import load_dotenv, find_dotenv
-
-load_dotenv()
 
 TOKEN = os.getenv('TOKEN')
 app = Flask(__name__)
@@ -62,4 +58,4 @@ def index():
         return "<h1>Welcome!</h1>"
  
 if __name__ == '__main__':
-    app.run(threaded=True)
+    app.run(threaded=True,host="0.0.0.0")
